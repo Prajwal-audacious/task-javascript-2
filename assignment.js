@@ -62,7 +62,7 @@ console.log(
 // task 2 /
 
 let sampStr = "A Quick Brown Fox Jumps Over The Lazy Dog";
-let sta = "sbbggssdakjsdsajkfcjssaaa";
+
 
 let count = (str) => {
   let lowerCase = str.toLowerCase().split(" ").join("");
@@ -79,47 +79,47 @@ let count = (str) => {
     console.log(`${lowerCase[i]}:${counting}`);
     counting = 0;
   }
-  
 };
 
 count(sampStr);
-count(sta);
+
 
 // task 3
 
+let mostFrequent = (arr) => {
+  const frequencyMap = {};
+  let maxElement = arr[0];
+  let maxCount = 1;
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    if (frequencyMap[element]) {
+      frequencyMap[element]++;
+    } else {
+      frequencyMap[element] = 1;
+    }
+    if (frequencyMap[element] > maxCount) {
+      maxElement = element;
+      maxCount = frequencyMap[element];
+    }
+  }
+  console.log(frequencyMap)
+  return maxElement;
+};
 
-
-let mostFrequent = arr=>{
-      const frequencyMap = {};
-      let maxElement=arr[0];
-      let maxCount=1;
-      for(let i=0;i<arr.length;i++){
-            const element =arr[i];
-            if(frequencyMap[element]){
-                  frequencyMap[element]++;
-            }else{
-                  frequencyMap[element]=1;
-            }
-            if(frequencyMap[element]>maxCount){
-                  maxElement=element;
-                  maxCount=frequencyMap[element];
-            }
-      }
-      return maxElement;
-}
-
-
-
-let replace = (demo)=>{
+let replace = (demo) => {
   let str = demo;
-  let arr = []
-  let letter = str.toLowerCase().split(' ').join('')
-  for(let i=0;i<letter.length;i++) arr.push(letter[i])
-  arr.sort()
-  let X = mostFrequent(arr)
-  let mainStr = demo.replaceAll(X,"$").replaceAll(X.toUpperCase(),"$")
-  return console.log(mainStr)
-  
-}
+  let arr = [];
+  let letter = str.toLowerCase().split(" ").join("");
+  for (let i = 0; i < letter.length; i++) arr.push(letter[i]);
+  arr.sort();
+  let X = mostFrequent(arr);
+  let mainStr = demo.replaceAll(X, "$").replaceAll(X.toUpperCase(), "$");
+  return console.log(mainStr);
+};
 
-replace(sampStr)
+
+
+replace(sampStr);
+
+
+
