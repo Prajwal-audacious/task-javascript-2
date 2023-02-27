@@ -63,7 +63,6 @@ console.log(
 
 let sampStr = "A Quick Brown Fox Jumps Over The Lazy Dog";
 
-
 let count = (str) => {
   let lowerCase = str.toLowerCase().split(" ").join("");
   console.log(lowerCase);
@@ -83,7 +82,6 @@ let count = (str) => {
 
 count(sampStr);
 
-
 // task 3
 
 let mostFrequent = (arr) => {
@@ -102,7 +100,7 @@ let mostFrequent = (arr) => {
       maxCount = frequencyMap[element];
     }
   }
-  console.log(frequencyMap)
+  console.log(frequencyMap);
   return maxElement;
 };
 
@@ -117,9 +115,36 @@ let replace = (demo) => {
   return console.log(mainStr);
 };
 
-
-
 replace(sampStr);
 
+// task 4
 
+let object = {
+  firstName: "Prajwal",
+  lastName: "Ramanwal",
+  age: 25,
 
+  fullname: function () {
+    let str = `${this.firstName} ${this.lastName}`;
+    return str;
+  },
+
+  addInfo: function (s) {
+    let str2 = this.fullname() + ` is ${this.age} year old`;
+    return console.log(str2);
+  },
+
+  recursion:function(x){
+    if(x === 0 ){
+      return 1;
+    }else{
+      return x*this.recursion(x-1);
+    }
+    
+  }
+};
+
+object.addInfo();
+
+let cc = object.recursion(5)
+console.log(cc)
